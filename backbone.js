@@ -542,9 +542,10 @@
       if (!error) {
         this.trigger('valid', this, attrs, options || {});
         return true;
+      } else {
+        this.trigger('invalid', this, error, options || {});
+        return false;
       }
-      this.trigger('invalid', this, error, options || {});
-      return false;
     }
 
   });
